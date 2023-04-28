@@ -58,6 +58,7 @@
  <!-- Contact Form JS -->
 <script>
   var btn = document.getElementById('btn');
+var form = document.getElementById('contact-form');
 
 btn.addEventListener('click', function(e) {
   e.preventDefault();
@@ -80,10 +81,16 @@ btn.addEventListener('click', function(e) {
     Subject : "Contact Form",
     Body : body
   }).then(
-    message => alert(message)
+    function(response) {
+      alert("Message sent successfully!");
+      form.reset();
+      location.reload();
+    },
+    function(error) {
+      alert("Message failed to send.");
+    }
   );
 });
-
 
 
 
