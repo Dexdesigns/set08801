@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS Style -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Tab Icon -->
+    <link rel="shortcut icon" href="img/Fav-icon.png" type="image/x-icon">
+
+    <!-- Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <title>Nigerian Food Recipes</title>
+</head>
+<body>
+    <!-- header starts here -->
+    <div class="hero-single">
+       <nav>
+        <a href="index.html">
+            <h2 class="logo"><i class='bx bxs-food-menu'></i>Nigerian Food Recipes</h2>
+            </a>
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#Recipes-Container">Recipes</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <i class='bx bx-menu' id="menu-icon" onclick=""></i>
+       </nav>
+       <h2 class="Cnt-txt">Contact</h2>
+    </div>
+
+        <!-- Contact Form -->
+
+        <div class="contact-container">
+          <form method="post">
+            <input type="text" placeholder="Name" id="name" autocomplete="off">
+            <input type="email" placeholder="Email" id="email" autocomplete="off">
+            <input type="text" placeholder="Subject" id="subject" autocomplete="off">
+            <textarea id="message" placeholder="Message" cols="30" rows="10"></textarea>
+            <button id="btn">Send</button>
+          </form>
+        </div>
+        
+              
+        </div>
+
+    <!-- Footer starts here -->
+<div class="footer">
+    All Rights Reserved <i class='bx bx-copyright'></i> Nigerian Food Recipe
+  </div>
+
+ <!-- Mobile Menu js -->
+ <script type="text/javascript" src="script.js"></script>
+
+ <!-- Contact Form JS -->
+<script>
+  var btn = document.getElementById('btn');
+
+btn.addEventListener('click', function(e) {
+  e.preventDefault();
+  var name = document.getElementById('name').value;
+  var email = document.getElementById('email').value;
+  var subject = document.getElementById('subject').value;
+  var message = document.getElementById('message').value;
+
+  if (name === "" || email === "" || subject === "" || message === "") {
+    alert("Please fill out all fields");
+    return;
+  }
+
+  var body = 'name: '+name + '<br/> email: ' + email + '<br/> subject: ' +subject + '<br/> message: '+message;
+  
+  Email.send({
+    SecureToken : "0722ce44-367b-40c5-9243-23d41b0c43f0",
+    To : 'adebisi.ibrohim@gmail.com',
+    From : "debisi.adebisi@gmail.com",
+    Subject : "Contact Form",
+    Body : body
+  }).then(
+    message => alert(message)
+  );
+});
+
+
+
+
+</script>
+
+ <script src="https://smtpjs.com/v3/smtp.js">
+</script>
+</body>
+</html>

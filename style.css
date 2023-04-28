@@ -44,6 +44,7 @@
 }
 
 
+
 nav {
     display: flex;
     align-items: center;
@@ -94,6 +95,10 @@ nav i {
    font-size: 25px;
 }
 
+.logo i {
+  font-size: 22px;
+}
+
 .bannertext {
     margin: 0 auto;
     font-size: 120px;
@@ -118,7 +123,7 @@ nav i {
     justify-content: center;
     flex-wrap: wrap;
     align-content: center;
-    gap: 2em;
+    gap: 1em;
 }
 
 .categories div {
@@ -128,6 +133,12 @@ nav i {
     flex-direction: column;
     box-shadow: rgba(5, 5, 5, 0.145) 0px 0px 20px;
 }
+
+.categories div:hover {
+  transition: 0.5s;
+    transform: translateY(5px);
+}
+
 .categories div img {
     width: 150px;
 }
@@ -147,6 +158,24 @@ nav i {
 
 
 /* Recipes Contaianer starts here */
+
+
+/* Filter Search */
+
+.filter {
+ margin: 1em auto;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.filter input {
+  padding: 15px 25px;
+  border-radius: 30px;
+  border: #0b6531 solid 1px;
+  color: #0b6531;
+  width: 50%;
+}
 
 .Recipes-Container {
   display: flex;
@@ -336,6 +365,81 @@ button{
 
 
 
+/* Contact Form */
+
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.contact-container input[type="text"],
+.contact-container input[type="email"],
+.contact-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.contact-container textarea {
+  resize: none;
+}
+
+.contact-container button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color:#0b6531;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contact-container button:hover {
+  background-color:#bbe76f;
+}
+
+@media screen and (min-width: 768px) {
+  .contact-container {
+    max-width: 700px;
+    padding: 40px;
+  }
+
+  .contact-container form {
+    margin-top: 40px;
+  }
+
+  .contact-container input[type="text"],
+  .contact-container input[type="email"],
+  .contact-container textarea {
+    width: 70%;
+  }
+
+  .contact-container button {
+    width: 80%;
+  }
+}
+
+.Cnt-txt {
+  font-size: 50px;
+  text-align: center;
+  color: #ffffff;
+
+}
+
+
 /* Footer starts here */
 
 .footer {
@@ -372,7 +476,7 @@ button{
     }
     .bannertext { 
       font-size: 95px;
-      padding: 18% 7%;
+      vertical-align: middle;
     }
     .Recipes-Container {
       display: grid;
@@ -405,6 +509,8 @@ button{
     }
   }
 
+
+ /* Mobile Nav Menu Starts here */
     @media screen and (max-width: 1090px) {
       
       .bx-menu {
@@ -423,9 +529,9 @@ button{
         position: absolute;
         top: 8%;
         right: 10%;
-        width: 270px;
-        height: 25vh;
-        padding-top: 20px;
+        width: 200px;
+        height: 20vh;
+        padding-top: 22px;
         background-color: #bbe76f;
         border-radius: 0 0 10px 10px;
         display: flex;
@@ -447,7 +553,11 @@ button{
       
 
       
-    }
+    }     
+    /* Mobile Nav Menu ends here */
+
+
+
   @media screen and (max-width: 1000px) {
   
    
@@ -455,7 +565,7 @@ button{
 
     .bannertext { 
       font-size: 95px;
-      padding: 25% 7%;
+      vertical-align: middle;
     }
   }
 
@@ -465,7 +575,12 @@ button{
 
     .bannertext { 
       font-size: 95px;
-      padding: 30% 7%;
+      vertical-align: middle;
+    }
+
+    .single-container {
+      width: 90%;
+      grid-gap:20px;
     }
   }
 
@@ -481,7 +596,15 @@ button{
     }
     .bannertext { 
       font-size: 90px;
-      padding: 35% 7%;
+      vertical-align: middle;
+    }
+
+    .hero-single {
+      max-height: 25vh;
+    }
+
+    .single-image {
+      margin-top: 4em;
     }
   }
 
@@ -492,3 +615,71 @@ button{
   
   }
  
+
+  @media screen and (max-width: 450px) {
+  .bannertext {
+    font-size: 60px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .logo {
+    text-align: center;
+    color: #ffffff;
+
+   font-size: 18px;
+  }
+
+  .logo i {
+    font-size: 15px;
+  }
+
+  .hero {
+    max-height: 60vh;
+  }
+
+  .hero-single {
+    max-height: 20vh;
+  }
+
+  .single-image {
+    margin-top: 4em;
+  }
+
+  .single-image img {
+    max-width: 320px;
+  }
+  
+  .single-container {
+    width: 100%;
+  }
+
+  }
+
+  @media screen and (max-width: 395px) {
+
+  .categories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 15px;
+  }
+
+  .categories div {
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.categories div img {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.Recipe-title {
+
+  font-size: 35px;
+}
+}
